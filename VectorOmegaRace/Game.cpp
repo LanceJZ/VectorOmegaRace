@@ -16,7 +16,7 @@ int Game::OnInit()
 
 	try
 	{
-		Window::Init(screenWidth, screenHeight, "Vector Omega Race in SDL2 Alpha 00.05");
+		Window::Init(screenWidth, screenHeight, "Vector Omega Race in SDL2 Alpha 00.06");
 	}
 	catch (const std::runtime_error &error)
 	{

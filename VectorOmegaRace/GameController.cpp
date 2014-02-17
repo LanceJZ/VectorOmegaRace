@@ -63,6 +63,7 @@ void GameController::NewGame(void)
 	SpawnNewWave(pTheEnemyController->NewGame());
 	m_Score = 0;
 	m_PlayerShips = 4;
+	pStatus->SetShip(&m_PlayerShips);
 	m_EndOfWave = false;
 }
 
@@ -640,9 +641,15 @@ bool GameController::PlayerHit(void)
 	m_PlayerShips--;
 
 	if (m_PlayerShips > 0)
+	{
+		pStatus->SetShip(&m_PlayerShips);
 		return true;
+	}
 	else
+	{
 		pThePlayer->SetActive(&False);
+		pStatus->SetShip(&m_PlayerShips);
+	}
 
 	return false;
 }

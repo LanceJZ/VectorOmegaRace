@@ -3,7 +3,7 @@
 void Letter::DrawLetter(Vector2i *location, int *letter, int *size)
 {
 	Line LetterLine;
-	int sizeIn = *size;
+	int sizeIn = *size * 0.5;
 
 	if (*letter > -1 && *letter < 26)
 	{
@@ -25,7 +25,7 @@ void Letter::ProcessString(std::string *string, Vector2i *locationStart, int *si
 	std::string stringIn = *string;
 	Vector2i locationIn = *locationStart;
 	int stringlength = stringIn.size(); //length of the string.
-	int space;
+	int space = 0;
 
 	for (int letter = 0; letter < stringlength; letter++)
 	{
@@ -37,7 +37,7 @@ void Letter::ProcessString(std::string *string, Vector2i *locationStart, int *si
 			DrawLetter(&Vector2i(locationIn.x + space, locationIn.y), &letterIn, size);
 		}
 
-		space += float(*size * 2.666);
+		space += float(*size * 1.666);
 	}
 }
 
